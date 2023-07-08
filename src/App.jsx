@@ -1,6 +1,9 @@
 import { useState } from 'react'
+
 import Todo from './components/Todo';
 import TodoForm from './components/TodoForm';
+import Search from './components/Search';
+
 import "./App.css";
 
 function App() {
@@ -52,6 +55,7 @@ function App() {
   return (
     <div className='app'>
       <h1>Lista de tarefas</h1>
+      <Search />
       <div className='todo-list'>
         {
           todos.map((todo) => (
