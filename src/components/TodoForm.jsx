@@ -7,8 +7,7 @@ function TodoForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value || !category) return;
-    console.log(value, category);
-    //adicionar todo
+    console.log(value, category);    
     //limpar os campos
   };
 
@@ -16,8 +15,8 @@ function TodoForm() {
     <div className='todo-form'>
         <h2>Criar tarefa:</h2>
         <form onSubmit={handleSubmit}>
-            <input type="text" placeholder='Digite o título' onChange={(e) => setValue(e.target.value)} />
-            <select  onChange={(e) => setCategory(e.target.value)}>
+            <input type="text" placeholder='Digite o título' value={value} onChange={(e) => setValue(e.target.value)} />
+            <select value={category} onChange={(e) => setCategory(e.target.value)}>
                 <option value="">Selecione uma categoria</option>
                 <option value="Trabalho">Trabalho</option>
                 <option value="Pessoal">Pessoal</option>
