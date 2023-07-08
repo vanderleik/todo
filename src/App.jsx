@@ -24,6 +24,19 @@ function App() {
       isCompleted: false,
     },
   ]);
+
+  const addTodo = (text, category) => {
+    const newTodos = [...todos,{
+      id: Math.floor(Math.random() * 1000),
+      text,
+      category,
+      isCompleted: false,
+    },
+   ];
+
+   setTodos(newTodos);
+  };
+
   return (
     <div className='app'>
       <h1>Lista de tarefas</h1>
@@ -33,7 +46,7 @@ function App() {
             <Todo key={todo.id} todo={todo} />
             ))}
     </div>
-            <TodoForm todoForm={TodoForm} />
+            <TodoForm addTodo={addTodo} />
     </div>
     );
 }
