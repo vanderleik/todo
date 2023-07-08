@@ -7,8 +7,9 @@ function TodoForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!value || !category) return;
-    console.log(value, category);    
-    //limpar os campos
+    console.log(value, category);  
+    setValue("");
+    setCategory("");      
   };
 
   return (
